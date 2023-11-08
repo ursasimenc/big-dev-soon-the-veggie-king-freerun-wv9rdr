@@ -76,7 +76,7 @@ ul {
 	gap: 1rem;
 }
 
-a {
+a:not(button > a) {
 	text-decoration: none;
 	text-transform: uppercase;
 	color: var(--gray-900);
@@ -111,6 +111,19 @@ button {
 	gap: 0.5rem;
 	transition: var(--transition) background-color;
 	font-family: "Raleway SemiBold", sans-serif;
+}
+
+button > a {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.5rem;
+	font-family: "Raleway SemiBold", sans-serif;
+	text-decoration: none;
+	text-transform: uppercase;
+	color: var(--gray-900);
+	font-size: 17px;
 }
 
 #home {
@@ -179,4 +192,53 @@ span {
 			right: 35%;
 		}
 	}
+}
+
+#menu {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 3rem;
+
+	& #menu_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1rem;
+	}
+
+	& .cards {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		gap: 2rem;
+
+		& .card {
+			display: flex;
+			flex-direction: column;
+			box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+			border-radius: var(--border-radius);
+
+			& img {
+				width: 300px;
+				height: auto;
+				object-fit: contain;
+				border-radius: var(--border-radius) var(--border-radius) 0 0;
+			}
+
+			& div {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				gap: 1rem;
+				padding: 1rem;
+			}
+		}
+	}
+}
+
+footer {
+	height: 100px;
 }
