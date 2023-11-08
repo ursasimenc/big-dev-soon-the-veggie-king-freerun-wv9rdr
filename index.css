@@ -42,6 +42,10 @@
 	box-sizing: border-box;
 }
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	font-family: "Raleway Regular", sans-serif;
 	color: var(--gray-900);
@@ -49,7 +53,7 @@ body {
 	flex-direction: column;
 	align-items: center;
 	justify-content: start;
-	width: 100vw;
+	font-size: 21px;
 }
 
 header,
@@ -124,14 +128,6 @@ button {
 	position: relative;
 	padding-inline: 3rem;
 
-	& #chilli {
-		position: absolute;
-		bottom: -35%;
-		left: 0;
-		width: 20%;
-		height: auto;
-	}
-
 	& p {
 		width: 80%;
 	}
@@ -139,5 +135,48 @@ button {
 	& img {
 		width: auto;
 		height: 400px;
+	}
+}
+
+span {
+	color: var(--orange-600);
+}
+
+#about_us {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+
+	& div {
+		width: 50%;
+		flex-direction: column;
+		display: flex;
+		justify-content: space-between;
+		gap: 1rem;
+	}
+
+	& .about_us_pictures {
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 600px;
+		/* clip-path: circle(50% at 50% 50%); */
+
+		& img {
+			width: 400px;
+			height: auto;
+		}
+
+		&::before {
+			content: "";
+			position: absolute;
+			height: 475px;
+			aspect-ratio: 1;
+			background-color: var(--green-600);
+			border-radius: 50%;
+			z-index: -1;
+			right: 35%;
+		}
 	}
 }
